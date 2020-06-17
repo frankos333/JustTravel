@@ -1,0 +1,44 @@
+/* BASE */
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: blanchedalmond;
+}
+
+/* NAV */
+
+.logo span{
+    color: red;
+}
+.logo {
+    color: rgb(199, 183, 183);
+}
+
+
+
+
+/* HELPERS */
+
+.flex {
+    display: flex;
+}
+
+.flex.justify-between {
+    justify-content: space-between;
+}
+.flex.align-center{
+    align-items: center;
+}
+
+/* LAYOUT */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+}
+
