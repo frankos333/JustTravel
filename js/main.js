@@ -81,7 +81,7 @@ function renderWeather(forecast) {
     const elForecast = document.querySelector('.forecast-container');
     elForecast.innerHTML = `
     <h3>Weather Today</h3>
-    <img class="icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+    <img class="icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" />
     <p> ${location} <img class="flag" src="https://www.countryflags.io/${forecast.sys.country}/shiny/64.png">  ${desc} </p>
     <p> <span>${mainTemp}</span> temperature from ${minMaxTemp}, ${wind} </p>
     `
