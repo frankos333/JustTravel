@@ -30,6 +30,23 @@ button {
 }
 
 
+/* FORECAST SECTION */
+
+.forecast-container {
+    background-color: #fff9c8;
+    border: 2px solid black;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px 2px black;
+    font-family: tahoma;
+    width: 36%;
+}
+
+.forecast-container img {
+    height: 20px;
+}
+
+
 /* HELPERS */
 
 .flex {
@@ -48,6 +65,5 @@ button {
 .container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 0;
 }
 

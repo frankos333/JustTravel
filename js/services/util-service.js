@@ -1,8 +1,9 @@
 'use strict'
 
-export const utilService={
+export const utilService = {
     getParameterByName,
-    copyToClipboard
+    copyToClipboard,
+    turnKelvinToCelsius
 }
 
 function getParameterByName(name, url) {
@@ -26,3 +27,8 @@ function copyToClipboard(str) {
     document.execCommand('copy');
     document.body.removeChild(el);
 };
+
+function turnKelvinToCelsius(kelvin) {
+    if (kelvin < 0) return 'KAR ABALE!';
+    else return parseInt(kelvin - 273.15);
+}
