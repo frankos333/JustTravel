@@ -8,10 +8,10 @@ locService.getLocs()
 
 window.onload = () => {
 
-    // const lat = utilService.getParameterByName(lat)
-    // const lng = utilService.getParameterByName(lng)
+    const lat = utilService.getParameterByName(lat)
+    const lng = utilService.getParameterByName(lng)
     // if (!lat || !lng) mapService.initMap()
-    mapService.initMap()
+    mapService.initMap(lat, lng)
 
         .then(() => {
 
@@ -48,7 +48,7 @@ document.querySelector('.search-btn').addEventListener('click', () => {
 document.querySelector('.save-location').addEventListener('click', () => {
     const pos = document.querySelector('.location-display').id.split('-')
     const [lat, lng] = pos
-   
+    utilService.copyToClipboard(`https://frankos333.github.io/JustTravel/index.html?lat=${lat}&lng=${lng}`)
 })
 
 
