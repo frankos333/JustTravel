@@ -64,6 +64,14 @@ button {
     background-color: rgb(255, 121, 121);
 }
 
+/* MAP */
+
+.map {
+    height: 500px;
+    width: 600px;
+}
+
+
 /* FORECAST SECTION */
 
 .forecast-container {
@@ -129,8 +137,6 @@ button {
     border: 1px solid rgb(255, 121, 121);
     transition:  background-color .3s;
     font-family: 'Montserrat', sans-serif;
-
-    
 }
 
 .save-location:hover {
@@ -204,4 +210,89 @@ button {
 .footer-container a:hover {
     transform: scale(1.2);
     transition: transform .3s;
+}
+
+/* RESPONSIVENESS  */
+
+@media (max-width: 1080px) {
+    .container {
+        max-width: 880px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .map {
+        height: 350px;
+        width: 450px;
+    }
+    .forecast-container { 
+        font-size: .8rem;
+    }
+
+    .forecast-container p:first-of-type {
+        font-size: 1.1rem;
+    }
+
+    .forecast-container img.flag {
+        height: 20px;
+    }
+    
+    .forecast-container img.logo {
+        height: 65px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .container {
+        max-width: 620px;
+    }
+
+    .map {
+        height: 350px;
+        width: 425px;
+    }
+    .forecast-container { 
+        font-size: .65rem;
+    }
+
+    .forecast-container p:first-of-type {
+        font-size: 1rem;
+    }
+
+    .forecast-container img.flag {
+        height: 20px;
+    }
+    
+    .forecast-container img.logo {
+        height: 45px;
+    }
+    .location-display {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .container {
+        max-width: 480px;
+    }
+
+    .map {
+        height: 250px;
+        width: 300px;
+    }
+
+    .main-nav button, .main-nav input {
+        padding: .5rem;
+    }
+
+    .main-nav input {
+        width: 9rem;
+    }
+
 }
