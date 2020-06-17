@@ -1,28 +1,24 @@
-console.log('Main!');
 
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
 import { geoService } from './services/geo-service.js'
-
+import { utilService } from './services/util-service.js'
 locService.getLocs()
     .then(locs => console.log('locs', locs))
 
 window.onload = () => {
+
+    // const lat = utilService.getParameterByName(lat)
+    // const lng = utilService.getParameterByName(lng)
+    // if (!lat || !lng) mapService.initMap()
     mapService.initMap()
+
         .then(() => {
 
             mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
         })
         .catch(console.log('INIT MAP ERROR'));
 
-    locService.getPosition()
-        .then(pos => {
-
-            console.log('User position is:', pos.coords);
-        })
-        .catch(err => {
-            console.log('err!!!', err);
-        })
 }
 
 document.querySelector('.my-location button').addEventListener('click', () => {
@@ -39,7 +35,23 @@ document.querySelector('.search-btn').addEventListener('click', () => {
     const joinedAdd = address.split(' ').join('+')
     const ansPrm = geoService.getGeo(joinedAdd)
         .then(coords => {
-            mapService.panTo(coords.results[0].geometry.location.lat, coords.results[0].geometry.location.lng)
+            let lat = coords.results[0].geometry.location.lat
+            let lng = coords.results[0].geometry.location.lng
+            mapService.panTo(lat, lng)
+            const elHdr = document.querySelector('.location-display');
+            elHdr.innerText = coords.results[0].formatted_address;
+            elHdr.id = `${lat}-${lng}`;
         })
         .catch(err => console.log(`Please enter a valid Address`))
 })
+
+document.querySelector('.save-location').addEventListener('click', () => {
+    const pos = document.querySelector('.location-display').id.split('-')
+    const [lat, lng] = pos
+   
+})
+
+
+
+
+
