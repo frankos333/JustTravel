@@ -1,6 +1,6 @@
 /* BASE */
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -17,9 +17,10 @@ button {
 
 /* NAV */
 
-.logo span{
+.logo span {
     color: red;
 }
+
 .logo {
     color: rgb(199, 183, 183);
     font-family: Arial, Helvetica, sans-serif;
@@ -28,7 +29,6 @@ button {
 .my-location button {
     margin-inline-start: 0.3rem;
 }
-
 
 /* FORECAST SECTION */
 
@@ -39,13 +39,21 @@ button {
     border-radius: 20px;
     box-shadow: 4px 4px 4px 2px black;
     font-family: tahoma;
-    width: 36%;
+    width: 28%;
+    text-align: center; 
 }
 
-.forecast-container img {
-    height: 20px;
+.forecast-container p:first-of-type {
+    font-size: 1.5rem;
 }
 
+.forecast-container img.flag {
+    height: 40px;
+}
+
+.forecast-container img.logo {
+    height: 75px;
+}
 
 /* HELPERS */
 
@@ -56,7 +64,8 @@ button {
 .flex.justify-between {
     justify-content: space-between;
 }
-.flex.align-center{
+
+.flex.align-center {
     align-items: center;
 }
 
@@ -66,4 +75,3 @@ button {
     max-width: 600px;
     margin: 0 auto;
 }
-
