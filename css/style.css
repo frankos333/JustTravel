@@ -9,6 +9,12 @@ body {
     background-color: blanchedalmond;
 }
 
+button {
+    outline: 0;
+    cursor: pointer;
+    background-color: #fff;
+}
+
 /* NAV */
 
 .logo span{
