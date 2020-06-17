@@ -16,8 +16,8 @@
             <div class="logo">
                 <h2><span>Just</span>Travel<span>.</span></h2>
             </div>
-            <div class="search-nav flex">
-                <div class="search-location">
+            <div class="search-location">
+                <div class="search-nav flex">
                     <input type="text" name="location-input" placeholder="Enter Location...">
                     <button class="search-btn">Go</button>
                 </div>
@@ -26,14 +26,17 @@
                 </div>
             </div>
         </nav>
-        <div class="forecast-container container">
-            
-        </div>
 
-        <div class="map container">
-            <h3 class="location-display"></h3>
-            <button class="save-location">Save Location</button>
-            <div id="map" style="width: 400px; height: 400px;"></div>
+        <div class="grand container flex justify-between">
+            <div class="map-container flex col">
+                <div id="map" style="width: 400px; height: 400px;"></div>
+                <div class="location-container flex col">
+                    <h3 class="location-display"></h3>
+                    <button class="save-location">Save Location</button>
+                </div>
+            </div>
+            <div class="forecast-container">
+            </div>
         </div>
     </div>
     <script type="module" src="js/main.js"></script>

@@ -13,6 +13,7 @@ button {
     outline: 0;
     cursor: pointer;
     background-color: #fff;
+    border: 0;
 }
 
 /* NAV */
@@ -37,10 +38,11 @@ button {
     border: 2px solid black;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 4px 4px 4px 2px black;
+    box-shadow: 0px 3px 5px 1px black;
     font-family: tahoma;
     width: 28%;
-    text-align: center; 
+    text-align: center;
+}
 }
 
 .forecast-container p:first-of-type {
@@ -54,7 +56,9 @@ button {
 .forecast-container img.logo {
     height: 75px;
 }
-
+.forecast-container h3{
+    text-decoration: underline;
+}
 /* HELPERS */
 
 .flex {
@@ -69,9 +73,34 @@ button {
     align-items: center;
 }
 
+.flex.col {
+    flex-direction: column;
+}
+
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
 /* LAYOUT */
 
 .container {
-    max-width: 600px;
+    max-width: 980px;
     margin: 0 auto;
+}
+
+.save-location {
+    border-radius: 100px;
+    height: 50px;
+    box-shadow: 0 0 0 2px black;
+    transition: transform .6s, background-color .6s;
+}
+
+.save-location:hover {
+    transform: scale(1.2);
+    background-color: greenyellow;
+}
+
+.location-display {
+    text-align: center;
+    font-size: 1.5rem;
 }
