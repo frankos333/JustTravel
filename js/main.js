@@ -25,7 +25,9 @@ window.onload = () => {
         })
 }
 
-document.querySelector('.btn').addEventListener('click', (ev) => {
-    console.log('Aha!', ev.target);
-    mapService.panTo(35.6895, 139.6917);
+document.querySelector('.my-location button').addEventListener('click', () => {
+    locService.getPosition()
+        .then(pos => {
+            mapService.panTo(pos.coords.latitude, pos.coords.longitude);
+        })
 })
