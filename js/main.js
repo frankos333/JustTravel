@@ -7,18 +7,16 @@ locService.getLocs()
     .then(locs => console.log('locs', locs))
 
 window.onload = () => {
-
-    const lat = utilService.getParameterByName(lat)
-    const lng = utilService.getParameterByName(lng)
-    // if (!lat || !lng) mapService.initMap()
-    mapService.initMap(lat, lng)
-
-        .then(() => {
-
-            mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
+    locService.getPosition()
+        .then(pos => {
+            const lat = (!utilService.getParameterByName('lat')) ? pos.coords.latitude : parseInt(utilService.getParameterByName('lat'))
+            const lng = (!utilService.getParameterByName('lng')) ? pos.coords.longitude : parseInt(utilService.getParameterByName('lng'))
+            mapService.initMap(lat, lng)
+                .then(() => {
+                    mapService.addMarker({ lat, lng });
+                })
+                .catch(console.log('INIT MAP ERROR'));
         })
-        .catch(console.log('INIT MAP ERROR'));
-
 }
 
 document.querySelector('.my-location button').addEventListener('click', () => {
