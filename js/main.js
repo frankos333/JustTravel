@@ -16,6 +16,12 @@ window.onload = () => {
             mapService.initMap(lat, lng)
                 .then(() => {
                     mapService.addMarker({ lat, lng });
+                    geoService.getGeoByLocation(lat, lng)
+                        .then(coords => {
+                            const elHdr = document.querySelector('.location-display');
+                            elHdr.innerText = coords.results[0].formatted_address;
+                            elHdr.id = `${lat}-${lng}`;
+                        })
                 })
                 .catch(console.log('INIT MAP ERROR'));
         })
@@ -23,7 +29,7 @@ window.onload = () => {
         .then(pos => pos)
         .then(pos => {
             weatherService.getWeather(pos.coords)
-                .then(forecast => renderWeather(forecast))            
+                .then(forecast => renderWeather(forecast))
         })
 }
 
@@ -48,12 +54,12 @@ document.querySelector('.search-btn').addEventListener('click', () => {
             elHdr.innerText = coords.results[0].formatted_address;
             elHdr.id = `${lat}-${lng}`;
 
-            var pos = {latitude: lat, longitude: lng}
+            var pos = { latitude: lat, longitude: lng }
             weatherService.getWeather(pos)
-                .then(forecast => renderWeather(forecast))  
+                .then(forecast => renderWeather(forecast))
         })
         .catch(err => console.log(`Please enter a valid Address`))
-    
+
 
 })
 
@@ -66,9 +72,9 @@ document.querySelector('.save-location').addEventListener('click', () => {
 
 
 function renderWeather(forecast) {
-console.log('forecast:', forecast)
+    console.log('forecast:', forecast)
     let mainTemp = utilService.turnKelvinToCelsius(forecast.main.temp) + '℃';
-    let minMaxTemp = utilService.turnKelvinToCelsius(forecast.main.temp_min) + ' to ' + utilService.turnKelvinToCelsius(forecast.main.temp_max) + ' ℃' 
+    let minMaxTemp = utilService.turnKelvinToCelsius(forecast.main.temp_min) + ' to ' + utilService.turnKelvinToCelsius(forecast.main.temp_max) + ' ℃'
     let location = forecast.name + ', ' + forecast.sys.country;
     let desc = forecast.weather[0].description;
     let wind = 'wind: ' + forecast.wind.speed + ' m/s';
