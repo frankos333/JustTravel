@@ -18,7 +18,9 @@ body {
     color: rgb(199, 183, 183);
 }
 
-
+.my-location button {
+    margin-inline-start: 0.3rem;
+}
 
 
 /* HELPERS */
