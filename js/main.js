@@ -22,7 +22,7 @@ window.onload = () => {
     locService.getPosition()
         .then(pos => pos)
         .then(pos => {
-            // weatherService.getWeather(pos.coords)
+            weatherService.getWeather(pos.coords)
                 .then(forecast => renderWeather(forecast))            
         })
 }
