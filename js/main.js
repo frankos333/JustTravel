@@ -37,6 +37,14 @@ document.querySelector('.my-location button').addEventListener('click', () => {
     locService.getPosition()
         .then(pos => {
             mapService.panTo(pos.coords.latitude, pos.coords.longitude);
+            geoService.getGeoByLocation(pos.coords.latitude, pos.coords.longitude)
+                .then(coords => {
+                    const elHdr = document.querySelector('.location-display');
+                    elHdr.innerText = coords.results[0].formatted_address;
+                    elHdr.id = `${lat}-${lng}`;
+                })
+            weatherService.getWeather(pos.coords)
+                .then(forecast => renderWeather(forecast))
         })
 })
 
