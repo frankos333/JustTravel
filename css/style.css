@@ -28,8 +28,10 @@ button {
 }
 
 .logo span {
-    color: rgb(255, 121, 121);
+    color: rgb(197, 135, 87);
+    text-shadow: 1px 0px 2px #e9a11e;
 }
+
 
 .logo {
     color: rgb(199, 183, 183);
@@ -43,6 +45,7 @@ button {
     font-family: 'Montserrat', sans-serif;
     padding: 1rem;
     outline: none;
+    border: 1px #c5855a solid;
 }
 
 .my-location button {
@@ -54,14 +57,14 @@ button {
 }
 
 .main-nav button {
-    border: 1px solid rgb(255, 121, 121);
+    border: 1px solid rgb(197, 134, 91);
     transition: .3s;
 }
 
 .main-nav button:hover {
     color: white;
     font-weight: bold;
-    background-color: rgb(255, 121, 121);
+    background-color: rgb(208, 175, 146);
 }
 
 /* MAP */
@@ -76,7 +79,7 @@ button {
 
 .forecast-container {
     background-color: #f6ffff;
-    border: 1px solid #ffc5c5;
+    border: 1px solid rgb(197, 134, 91);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: inset 0px 1px 5px 1px black;
@@ -100,6 +103,7 @@ button {
 
 .forecast-container h3 {
     text-decoration: underline;
+    font-size: 1.5rem;
 }
 
 /* HELPERS */
@@ -134,13 +138,13 @@ button {
 .save-location {
     border-radius: 100px;
     height: 50px;
-    border: 1px solid rgb(255, 121, 121);
+    border: 1px solid rgb(197, 134, 91);
     transition:  background-color .3s;
     font-family: 'Montserrat', sans-serif;
 }
 
 .save-location:hover {
-    background-color: rgb(255, 121, 121);
+    background-color: rgb(208, 175, 146);
     color: white;
 }
 
@@ -162,12 +166,11 @@ button {
 }
 
 .main-footer {
-    background-color: rgba(250, 255, 227, 0.4);
+    background-color: rgba(239, 239, 239, 0.71);
     border-top: 1px solid black;
     bottom: 0;
     width: 100%;
     height: 5rem;
-    margin-top: 2rem;
     position: absolute;
 }
 
@@ -175,12 +178,12 @@ button {
     justify-content: space-around;
 }
 
-.footer-container h2 , .footer-container h3 {
+.footer-container h2 {
     font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-shadow: 1px -1px 8px #1e1f20;
     cursor: default;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-inline-end: 3rem;
 }
 
