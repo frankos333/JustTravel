@@ -6,28 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustTravel.</title>
     <link rel="shortcut icon" href="imgs/title.png" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=MuseoModerno&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/f4b51a9e99.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
 
 <body>
+
+    <datalist id="citis">
+        <option value="Tel Aviv">
+        <option value="Tokyo">
+        <option value="Hawai">
+        <option value="New York">
+        <option value="Paris">
+      </datalist>
+
     <div class="page-container">
-        <nav class="main-nav container flex align-center justify-between">
-            <div class="logo">
-                <h2><span>Just</span>Travel<span>.</span></h2>
-            </div>
-            <div class="search-nav flex">
-                <div class="search-location">
-                    <input type="text" name="location-input" placeholder="Enter Location...">
-                    <button class="search-btn">Go</button>
+        <div class="nav-container">
+            <nav class="main-nav container flex align-center justify-between">
+                <div class="logo animate__animated animate__backInLeft">
+                    <h2><span>Just</span>Travel<span>.</span></h2>
                 </div>
-                <div class="my-location">
-                    <button>My Location</button>
+                <div class="search-nav flex">
+                    <div class="search-location">
+                        <input list="citis" type="text" name="location-input" placeholder="Search Location...">
+                        <button title="Search!" class="search-btn"><i class="fas fa-search-location"></i></button>
+                    </div>
+                    <div class="my-location">
+                        <button><i class="fas fa-map-marker-alt"></i> My Location</button>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+
         <div class="forecast-container container">
-            
+
         </div>
 
         <div class="map container">

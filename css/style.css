@@ -17,18 +17,53 @@ button {
 
 /* NAV */
 
+.nav-container {
+    background-color: #fff;
+    border-bottom: 3px solid #000;
+    box-shadow: 3px 3px 4px black;
+}
+
+.main-nav {
+    margin-bottom: 1rem;
+}
+
 .logo span {
-    color: red;
+    color: rgb(255, 121, 121);
 }
 
 .logo {
     color: rgb(199, 183, 183);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'MuseoModerno', cursive;
+    margin: 0;
+    padding: 0;
+    cursor: default;
 }
 
+.main-nav button, .main-nav input {
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem;
+    outline: none;
+}
 .my-location button {
     margin-inline-start: 0.3rem;
 }
+
+.search-btn {
+    text-transform: uppercase;
+}
+
+.main-nav button {
+    border: 1px solid rgb(255, 121, 121);
+
+    transition: .3s;
+}
+
+.main-nav button:hover {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(255, 121, 121);
+}
+
 
 /* FORECAST SECTION */
 
